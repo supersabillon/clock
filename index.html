@@ -1,0 +1,183 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Clock</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <style type="text/css">
+  * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+  
+  html, body, p {
+        margin: 0;
+        padding: 0;
+  }
+  
+  .group:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  body {
+    background: #444;
+    padding: 20px 0 0;
+    font-family: sans-serif;
+    color: #888;
+
+  }
+
+  body.alarm {
+    -webkit-animation: alarm 0.25s infinite;
+    -moz-animation: alarm 0.25s infinite;
+    animation: alarm 0.25s infinite;;
+  }
+
+  @font-face {
+    font-family: 'digi';
+    src: url('ds-digii-webfont.eot');
+    src: url('ds-digii-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ds-digii-webfont.woff') format('woff'),
+         url('ds-digii-webfont.ttf') format('truetype'),
+         url('ds-digii-webfont.svg#ds-digitalitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+  .time {
+    font-family: 'digi';
+    font-size: 5em;;
+    width: 300px;
+    padding: 0 10px;
+    border: 5px solid #666;
+    margin: 0 auto;
+    color: #000;
+    -webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+background: #ffffff;
+background: -moz-linear-gradient(top,  #ffffff 0%, #ffffff 50%, #eee 51%, #eee 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#ffffff), color-stop(51%,#eee), color-stop(100%,#eee));
+background: -webkit-linear-gradient(top,  #ffffff 0%,#ffffff 50%,#eee 51%,#eee 100%);
+background: -o-linear-gradient(top,  #ffffff 0%,#ffffff 50%,#eee 51%,#eee 100%);
+background: -ms-linear-gradient(top,  #ffffff 0%,#ffffff 50%,#eee 51%,#eee 100%);
+background: linear-gradient(to bottom,  #ffffff 0%,#ffffff 50%,#eee 51%,#eee 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eee',GradientType=0 );
+
+  }
+
+  ul li {
+    margin: 0 0 40px 0;
+    list-style-type: none;
+  }
+
+
+  ul li h2 {
+    text-align: center;
+
+    margin: 0 0 5px;
+  }
+
+  form {
+    width: 300px;
+    margin: 7px auto;
+    text-align: center;
+  }
+
+ button {
+    margin: 0 auto;
+    height: 30px;
+    width: 50%;
+    float: left;
+    text-align: center;
+  }
+
+  input[type="text"] {
+    background-color: #ebebeb;
+    height: 30px;
+    width: 100px;
+    color: #000;
+    float: left;
+    text-align: center;
+  }
+
+  input[type="text"].error {
+    border: 1px solid red;
+  }
+
+  form#frmTimer button {
+    float: none;
+   }
+
+  #timerReset {
+    display: none;
+   }
+
+  form#frmTimer.active button {
+    float: left;
+    display: block;
+  }
+
+  @-moz-keyframes alarm {
+    0%   { background-color: red; }
+    100% { background-color: yellow; }   
+  }
+
+  @-webkit-keyframes alarm {
+    0%   { background-color: red; }
+    100% { background-color: yellow; }
+  }
+
+  @keyframes alarm {
+    0%   { background-color: red; }
+    100% { background-color: yellow; }   
+  }
+
+   </style>
+
+
+</head>
+<body>
+
+<ul>
+  <li>
+    <h2>Current time</h2>
+    <div class="time" id="clock">00:00:00</div>
+  </li>  
+
+  <li>
+    <h2>Stop Watch</h2>
+    <div class="time" id="stopwatch">00:00:0</div>
+    <form name="stopwatch" class="group">
+      <button type="button" value="Start" id="startpause">Start</button>  
+      <button type="button" value="Reset" id="reset">Reset</button>
+    </form>
+  </li>
+
+  <li>
+    <h2>Timer</h2>
+    <div class="time" id="timer">00:00:00</div>
+    <form id="frmTimer" class="group">
+      <input id="hour" type="text" maxlength="2" value="hr">
+      <input id="minute" type="text" maxlength="2" value="min">
+      <input id="second" type="text" maxlength="2" value="sec">
+      <button id="start-timer" type="button">Start</button>
+      <button type="button" value="Reset" id="timerReset">Reset</button>
+    </form>
+  </li>
+
+
+</ul>
+
+</body>
+<script type="text/javascript" src="js/eventutil.js"></script>
+<script src="js/script.js"></script>
+
+</html>
