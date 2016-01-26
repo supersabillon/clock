@@ -73,6 +73,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
   }
 
+  ul {
+    padding: 0;
+  }
+
   ul li {
     margin: 0 0 40px 0;
     list-style-type: none;
@@ -140,6 +144,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     100% { background-color: yellow; }
   }
 
+  footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+  }
+
+  footer p {
+    text-align: center;
+  }
+
+  footer a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 90%;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+  }
+
+  footer a:hover {
+    color: #ddd;
+    border-color: #ddd;
+  }
+
    </style>
 
 
@@ -175,7 +202,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 
 </ul>
-
+<footer>
+<p>by <a href="https://twitter.com/supersabillon">Joel Sabillón</a></p>
+</footer>
 </body>
 <script type="text/javascript" src="js/eventutil.js"></script>
 <script src="js/script.js"></script>
